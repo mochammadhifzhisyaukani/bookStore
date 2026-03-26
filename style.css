@@ -1,0 +1,338 @@
+/* NAVBAR */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  /* background-color: #d6dbe2; */
+  background: linear-gradient(to right, #d6dbe2, #6aed94);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333333;
+}
+
+nav h1 {
+  margin-left: 10px;
+  color: #2e7d32;
+}
+
+nav ul {
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline;
+  font-weight: 600;
+  margin: 10px;
+  color: #333333;
+  text-align: center;
+  transition: 0.1s;
+}
+
+nav ul li:hover {
+  padding: 1px;
+  color: #6aed94;
+  border-bottom: 3px solid #333333;
+  border-radius: 2px;
+}
+
+/* BOOK */
+#book {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.form-box {
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px 30px;
+  background-color: #a8e6a3;
+  border-radius: 10px;
+  box-shadow: 3px 6px 16px 10px rgba(0, 255, 98, 0.2);
+}
+
+.form-box input {
+  margin: 5px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #094911;
+  width: 200px;
+}
+
+.form-box button {
+  color: white;
+  background-color: #094911;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.form-box button:hover {
+  background-color: #083c0f;
+  color: rgb(168, 162, 162);
+}
+
+/* DEVELOPER */
+
+#dev {
+  margin-top: 50px;
+}
+
+.developer section {
+  background-color: #a8e6a3;
+  border-radius: 10px;
+  box-shadow: 3px 6px 16px 10px rgba(0, 255, 98, 0.2);
+}
+
+.ari img {
+  border-radius: 50%;
+  width: 150px;
+  height: 160px;
+  object-fit: cover;
+  transition: 2s;
+  margin: 15px;
+  margin-bottom: 35px;
+}
+.hifzhi img {
+  margin: 15px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 2s;
+}
+
+.gerry img {
+  height: 160px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 2s;
+  margin: 15px;
+}
+
+section img:hover {
+  padding: 1px;
+  transform: scale(1.1);
+}
+
+.developer p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.developer a {
+  display: inline-block;
+  color: white;
+  background-color: #094911;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.developer a:hover {
+  background-color: #083c0f;
+  color: rgb(168, 162, 162);
+  padding: 5px;
+  transform: scale(1.1);
+}
+
+.card {
+  transition: 0.3;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+
+section {
+  border: 2px solid black;
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: auto;
+  background: linear-gradient(to right, #d6dbe2, #6aed94);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.kode {
+  background-color: #4a90e2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* JS */
+.card-js {
+  color: #000000;
+  padding: 15px;
+  margin:10px ;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: var(--white);
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #094911;
+  color: white;
+  margin: 3px;
+}
+
+#strukTransaksi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.struk {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* LOGIN */
+
+
+ .login {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border: 2px solid rgb(68, 141, 39);
+  padding: 20px;
+  border-radius: 10px;
+  height: 300px;
+  width: 900px;
+  gap: 50px;
+  margin: 150px auto;
+  transition: 0.3s;
+
+}
+
+.login:hover {
+  box-shadow: 10px 20px 20px 20px rgba(91, 159, 72, 0.2);
+}
+
+
+.Sign-in {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  align-items: center;
+}
+
+.Sign-in h1 {
+  color: #094911;
+  margin-bottom: 60px;
+}
+
+.Sign-in p {
+  color: #094911;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.Sign-in a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 70px;
+  background-color: #094911;
+  padding: 6px 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+
+.Sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.Sign-up h1 {
+  color: #094911;
+  margin-bottom: 20px;
+}
+
+.Sign-up input {
+  margin: 5px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #094911;
+  width: 250px;
+}
+
+.Sign-up a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #094911;
+  padding: 6px 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.Sign-in a:hover,
+.Sign-up a:hover {
+  background-color: #63ad6e;
+  transform: scale(1.03);
+}
