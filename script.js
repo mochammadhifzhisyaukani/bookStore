@@ -47,6 +47,25 @@ function tambah() {
 
 }
 
+function ClearAll() {
+  daftar = [];
+  render();
+
+}
+
+function editBook(index) {
+  const b = daftar[index];
+
+  document.getElementById("judul").value = b.judul;
+  document.getElementById("penulis").value = b.penulis;
+  document.getElementById("genre").value = b.genre;
+  document.getElementById("harga").value = b.harga;
+  document.getElementById("stok").value = b.stok;
+
+  editIndex = index;
+  document.getElementById("Tambah").innerText = "Update";
+}
+
 function render() {
   const listBuku = document.getElementById("listBuku");
   const listBeli = document.getElementById("listBeli");
@@ -128,18 +147,7 @@ function tampilkanStruk() {
   });
 }
 
-function editBook(index) {
-  const b = daftar[index];
 
-  document.getElementById("judul").value = b.judul;
-  document.getElementById("penulis").value = b.penulis;
-  document.getElementById("genre").value = b.genre;
-  document.getElementById("harga").value = b.harga;
-  document.getElementById("stok").value = b.stok;
-
-  editIndex = index;
-  document.getElementById("Tambah").innerText = "Update";
-}
 
 function clearForm() {
   document.getElementById("judul").value = "";
@@ -149,10 +157,6 @@ function clearForm() {
   document.getElementById("stok").value = "";
 }
 
-function ClearAll() {
-  daftar = [];
-  render();
 
-}
 
 render();

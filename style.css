@@ -188,9 +188,15 @@ section {
 
 /* FOOTER */
 .footer {
+  padding: 20px 0;
   text-align: center;
   margin-top: auto;
   background: linear-gradient(to right, #d6dbe2, #6aed94);
+}
+
+.footer p {
+  color: #333333;
+  font-size: 17px;
 }
 
 .info {
@@ -215,8 +221,14 @@ section {
   margin:10px ;
   border-radius: 10px;
   border: 1px solid #ccc;
+  border-left: 4px solid #094911;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-color: var(--white);
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+.card-js:hover{
+  transform: scale(1.1);
 }
 
 .btn {
@@ -227,6 +239,12 @@ section {
   background-color: #094911;
   color: white;
   margin: 3px;
+}
+
+.btn:hover {
+  background-color: #083c0f;
+  color: rgb(168, 162, 162);
+  transform: scale(1.05);
 }
 
 #strukTransaksi {
