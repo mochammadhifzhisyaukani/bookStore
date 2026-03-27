@@ -22,6 +22,7 @@
             <!-- <li><a href="index.html">Beli Buku</a></li> -->
             <li><a href="index.html">Kelola Buku</a></li>
             <li><a href="Developer.html">Developer</a></li>
+            <li class="logout" onclick="logout()">Log-out</li>
         </ul>
     </nav>
 
@@ -29,7 +30,7 @@
         <h2 id="book">Masukan buku yang anda akan jual</h2>
         <hr width="600px">
     </center>
-    <main>
+    <main class="index-buku">
         <div class="form-box">
             <table>
                 <tr>
@@ -42,10 +43,10 @@
                     <td><input type="text" id="penulis" placeholder="masukan nama penulis "></td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td><label>Genre : </label></td>
                     <td><input type="text" id="genre" placeholder="masukkan genre"></td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td><label>Harga : </label></td>
                     <td><input type="number" id="harga" placeholder="Masukan harga buku"></td>
@@ -76,18 +77,16 @@
         <center>
             <h2 id="book">Katalog Pembelian Buku</h2>
             <hr width="600px">
-
         </center>
-        <div id="listBeli" class="card-container"></div>
-        <center>
 
+        <div id="listBeli" class="card-container"></div>
+
+        <center>
             <h2>Riwayat Transaksi</h2>
             <hr width="600px">
         </center>
 
         <div id="strukTransaksi" class="struk-container"></div>
-
-
 
 
     </main>
