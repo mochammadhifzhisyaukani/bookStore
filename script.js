@@ -71,14 +71,15 @@ function render() {
   listBuku.innerHTML = daftar
     .map(
       (b, i) => `
-        <div class="card-js">
-          <h3>${b.judul}</h3>
-          <p>Penulis: ${b.penulis}</p>
-          <p>Harga: ${b.harga.toLocaleString()}</p>
-          <p>Stok: ${b.stok}</p>
-          <button onclick="editBook(${i})" class="btn">Edit</button>
-          <button onclick="deleteBook(${i})" class="btn">Hapus</button>
-        </div>`,
+        <tr>
+          <th>${i + 1}</th>
+          <th>${b.judul}</th>
+          <th>${b.penulis}</th>
+          <th>${b.harga.toLocaleString()}</th>
+          <th>${b.stok}</th>
+          <th><button onclick="editBook(${i})" class="btn">Edit</button></th>
+          <th><button onclick="deleteBook(${i})" class="btn">Hapus</button></th>
+        </tr>`,
     )
     .join("");
 

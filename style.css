@@ -80,9 +80,9 @@ nav ul li:hover {
     #306e44,
     #515a67
   );
-
   color: white;
 }
+
 
 .form-box input {
   margin: 5px;
@@ -104,6 +104,8 @@ nav ul li:hover {
   background-color: #083c0f;
   color: rgb(168, 162, 162);
 }
+
+
 
 /* DEVELOPER */
 
@@ -255,7 +257,7 @@ section {
   /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
   background-color: white;
   transition: 0.3s;
-  width: 128px;
+  width: 150px;
 }
 
 .card-js:hover {
