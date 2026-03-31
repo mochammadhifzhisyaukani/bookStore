@@ -1,12 +1,14 @@
 let daftar = [];
+
 let transaksi = [];
+
 let editIndex = null;
 
 // nambah buku
 function tambah() {
-  let judul = document.getElementById("judul").value;
+  let judul = document.getElementById("judul").value.toUpperCase();
   let penulis = document.getElementById("penulis").value;
-  // let genre = document.getElementById("genre").value;
+  let genre = document.getElementById("genre").value;
   let harga = Number(document.getElementById("harga").value);
   let stok = document.getElementById("stok").value;
 
@@ -16,6 +18,8 @@ function tambah() {
   } else if (!penulis) {
     alert("tolong masukan penulis terlebih dahulu");
     return;
+  } else if (!genre) {
+    alert("tolong masukan genre terlebih dahulu");
   } else if (!harga) {
     alert("tolong masukan harga terlebih dahulu");
     return;
@@ -27,12 +31,13 @@ function tambah() {
   let data = {
     judul: judul,
     penulis: penulis,
+    genre: genre,
     harga: harga,
     stok: stok,
   };
 
   if (editIndex !== null) {
-    daftar[editIndex] = { judul, penulis, harga, stok };
+    daftar[editIndex] = { judul, penulis, genre, harga, stok };
     editIndex = null;
     document.getElementById("Tambah").innerText = "Tambah";
   } else {
@@ -57,6 +62,7 @@ function ClearAll() {
 function clearForm() {
   document.getElementById("judul").value = "";
   document.getElementById("penulis").value = "";
+  document.getElementById("genre").value = "";
   document.getElementById("harga").value = "";
   document.getElementById("stok").value = "";
 }
@@ -72,21 +78,22 @@ function render() {
           <th>${i + 1}</th>
           <th>${b.judul}</th>
           <th>${b.penulis}</th>
+          <th>${b.genre}</th>
           <th>${b.harga.toLocaleString()}</th>
           <th>${b.stok}</th>
-          <th><button onclick="editBook(${i})" class="btn">Edit</button></th>
-          <th><button onclick="deleteBook(${i})" class="btn">Hapus</button></th>
+          <th><button onclick="editBook(${i})" class="btnListBuku">Edit</button></th>
+          <th><button onclick="deleteBook(${i})" class="btnListBuku">Hapus</button></th>
         </tr>`,
   );
-  
-  listBuku.innerHTML = hasilListBuku.join("");
 
+  listBuku.innerHTML = hasilListBuku.join("");
 
   let hasilListBeli = daftar.map(
     (b, i) => `
         <div class="card-js">
           <h3>${b.judul}</h3>
           <p>Penulis: ${b.penulis}</p>
+          <p>Genre: ${b.genre}</p>
           <p>Harga: ${b.harga.toLocaleString()}</p>
           <p>Stok: ${b.stok}</p>
           <button onclick="beliBook(${i})" class="btn">Beli</button>
@@ -102,6 +109,7 @@ function editBook(index) {
 
   document.getElementById("judul").value = b.judul;
   document.getElementById("penulis").value = b.penulis;
+  document.getElementById("genre").value = b.genre;
   document.getElementById("harga").value = b.harga;
   document.getElementById("stok").value = b.stok;
 
@@ -117,9 +125,9 @@ function beliBook(index) {
     buku.stok -= 1;
 
     let dataTransaksi = {
-      id: "TRX-" + Date.now(),
+      id: "TRX-" + Math.floor(Math.random() * 10000),
       judul: buku.judul,
-      // genre: buku.genre,
+      genre: buku.genre,
       harga: buku.harga,
       tanggal: new Date().toLocaleString(),
     };
@@ -151,7 +159,8 @@ function tampilkanStruk() {
       <div class="struk">
         <b>ID: ${t.id}</b><br>
         Judul: ${t.judul}<br>
-        Harga:  Rp ${t.harga}<br>
+        Genre: ${t.genre}<br>
+        Harga:  Rp ${t.harga.toLocaleString()}<br>
         Tanggal: ${t.tanggal}
       </div>
     `;

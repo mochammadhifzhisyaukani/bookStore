@@ -13,7 +13,7 @@ body {
 /* NAVBAR */
 nav {
   /* background-color: #d6dbe2; */
-  background: linear-gradient(to right, #d6dbe2, #6aed94);
+  background: linear-gradient(to right, #d6dbe2, #6aed94, #d6dbe2, #6aed94);
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -30,7 +30,7 @@ nav h1 {
   color: #2e7d32;
 }
 
-nav ul {  
+nav ul {
   text-decoration: none;
   list-style: none;
   text-align: center;
@@ -54,20 +54,43 @@ nav ul li:hover {
   border-radius: 4px;
 }
 
-/* BOOK */
+/* BOOK  input*/
 #book {
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
-.form-box { 
+.form-box {
   width: 500px;
   margin: 50px auto;
   padding: 20px 30px;
   background: linear-gradient(to right, #d6dbe2, #43995e);
   box-shadow: 3px 6px 16px 10px rgba(0, 255, 98, 0.2);
-  transition: background 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition:
+    background 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out;
   border-radius: 5px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ini jadi dua kolom */
+  gap: 20px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-action {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-action button {
+  width: 200px;
 }
 
 .form-box:hover {
@@ -83,7 +106,6 @@ nav ul li:hover {
   );
   color: white;
 }
-
 
 .form-box input {
   margin: 5px;
@@ -105,8 +127,6 @@ nav ul li:hover {
   background-color: #083c0f;
   color: rgb(168, 162, 162);
 }
-
-
 
 /* DEVELOPER */
 
@@ -258,7 +278,7 @@ section {
   /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
   background-color: white;
   transition: 0.3s;
-  width: 150px;
+  width: 200px;
 }
 
 .card-js:hover {
@@ -275,9 +295,26 @@ section {
   background-color: #094911;
   color: white;
   margin: 3px;
+  width: 100%;
 }
 
 .btn:hover {
+  background-color: #083c0f;
+  color: rgb(168, 162, 162);
+  transform: scale(1.05);
+}
+
+.btnListBuku {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #094911;
+  color: white;
+  margin: 3px;
+}
+
+.btnListBuku:hover {
   background-color: #083c0f;
   color: rgb(168, 162, 162);
   transform: scale(1.05);

@@ -36,39 +36,35 @@
     </center>
     <main class="index-buku">
         <div class="form-box">
-            <table>
-                <tr>
-                    <td><label>Judul :</label></td>
-                    <td><input type="text" id="judul" placeholder="masukan judul buku " required></td>
-                </tr>
+            <div class="form-grid">
 
-                <tr>
-                    <td><label>Penulis : </label></td>
-                    <td><input type="text" id="penulis" placeholder="masukan nama penulis " required></td>
-                </tr>
+                <!-- KIRI -->
+                <div class="left">
+                    <label>Judul :</label>
+                    <input type="text" id="judul" placeholder="masukan judul buku" required>
 
-                <tr>
-                    <td><label>Genre : </label></td>
-                    <td><input type="text" id="genre" placeholder="masukkan genre"></td>
-                </tr>.
-                <tr>
-                    <td><label>Harga : </label></td>
-                    <td><input type="number" id="harga" placeholder="Masukan harga buku" required></td>
-                </tr>
+                    <label>Penulis :</label>
+                    <input type="text" id="penulis" placeholder="masukan nama penulis" required>
 
-                <tr>
-                    <td><label>Stok : </label></td>
-                    <td><input type="number" id="stok" placeholder="Masukan stok buku" required></td>
-                </tr>
+                    <label>Genre :</label>
+                    <input type="text" id="genre" placeholder="masukkan genre">
+                </div>
 
-                <tr>
+                <!-- KANAN -->
+                <div class="right">
+                    <label>Harga :</label>
+                    <input type="number" id="harga" placeholder="Masukan harga buku" required>
 
-                    <td><button onclick="tambah()" id="Tambah">Tambah</button></td>
-                    <td><button onclick="ClearAll()">Clear All</button></td>
-                </tr>
-            </table>
+                    <label>Stok :</label>
+                    <input type="number" id="stok" placeholder="Masukan stok buku" required>
+                </div>
 
+            </div>
 
+            <div class="form-action">
+                <button onclick="tambah()">Tambah</button>
+                <button onclick="ClearAll()">Clear All</button>
+            </div>
         </div>
 
         <center>
@@ -84,6 +80,7 @@
                     <th scope="col">No</th>
                     <th scope="col">Judul</th>
                     <th scope="col">Penulis</th>
+                    <th scope="col">Genre</th>
                     <th scope="col">Harga</th>
                     <th scope="col">Stok</th>
                     <th scope="col">Edit</th>
