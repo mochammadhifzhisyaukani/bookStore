@@ -8,26 +8,33 @@ body {
   margin: 0;
   padding: 0;
   /* background: linear-gradient(to right, #a7acb5, #264931); */
+  background: linear-gradient(to right, #e8f5e9, #c8e6c9);
 }
 
 /* NAVBAR */
 nav {
   /* background-color: #d6dbe2; */
-  background: linear-gradient(to right, #d6dbe2, #6aed94, #d6dbe2, #6aed94);
+  /* background: linear-gradient(to right, #d6dbe2, #6aed94, #d6dbe2, #6aed94); */
+  background: linear-gradient(to right, #2d6a4f, #40916c);
+  color: white;
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
   position: sticky;
+  top: 0;
 }
 
 nav a {
   text-decoration: none;
-  color: #333333;
+  color: #fffefe;
 }
 
 nav h1 {
+  font-weight: 1000;
   margin-left: 10px;
-  color: #2e7d32;
+  background: linear-gradient(to right, #58e96e, #64a180, #52b788);
+  color: transparent;
+  background-clip: text;
 }
 
 nav ul {
@@ -49,9 +56,26 @@ nav ul li {
 nav ul li:hover {
   transform: scale(1.2);
   padding: 5px;
-  color: #6aed94;
-  border-bottom: 3px solid #333333;
-  border-radius: 4px;
+  color: #d8f3dc;
+  border-bottom: 3px solid #d8f3dc;
+  border-radius: 2px;
+}
+
+.logout {
+  color: white;
+  background-color: red;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.logout:hover {
+  background-color: #b30000;
+  color: rgb(168, 162, 162);
+  transform: scale(1.05);
+  width: 80px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 /* BOOK  input*/
@@ -64,11 +88,8 @@ nav ul li:hover {
   width: 500px;
   margin: 50px auto;
   padding: 20px 30px;
-  background: linear-gradient(to right, #d6dbe2, #43995e);
+  background: linear-gradient(to right top, #d6dbe2, #43995e);
   box-shadow: 3px 6px 16px 10px rgba(0, 255, 98, 0.2);
-  transition:
-    background 0.5s ease-in-out,
-    box-shadow 0.5s ease-in-out;
   border-radius: 5px;
 }
 
@@ -94,17 +115,10 @@ nav ul li:hover {
 }
 
 .form-box:hover {
-  box-shadow: 3px 6px 16px 10px rgba(163, 168, 165, 0.4);
+  box-shadow: 0 10px 25px rgba(45, 106, 79, 0.2);
   border-radius: 10px;
-  background: linear-gradient(
-    to right bottom,
-    #73849d,
-    #51a16a,
-    #8f9db1,
-    #306e44,
-    #515a67
-  );
-  color: white;
+  background: linear-gradient(to right top, #559872, #e6f4ea);
+  transition: 0.3s ease-in-out;
 }
 
 .form-box input {
@@ -117,14 +131,15 @@ nav ul li:hover {
 
 .form-box button {
   color: white;
-  background-color: #094911;
+  background-color: #2d6a4f;
   padding: 5px;
   border-radius: 5px;
   margin: 5px;
 }
 
 .form-box button:hover {
-  background-color: #083c0f;
+  background-color: #1b4332;
+  transform: scale(1.04);
   color: rgb(168, 162, 162);
 }
 
@@ -241,16 +256,16 @@ section {
 
 /* FOOTER */
 .footer {
-  margin-bottom: 0px;
-  padding: 20px 0;
+  background: linear-gradient(to right, #2d6a4f, #40916c);
+  color: white;
   text-align: center;
-  margin-top: 50px;
-  background: linear-gradient(to right, #d6dbe2, #6aed94);
+  padding: 20px;
+  border-top: 2px solid #74c69d;
+  margin-top: 250px;
 }
 
 .footer p {
-  color: #333333;
-  font-size: 17px;
+  color: #d8f3dc;
 }
 
 /* JS */
@@ -438,12 +453,4 @@ section {
 .Sign-up a:hover {
   background-color: #63ad6e;
   transform: scale(1.03);
-}
-
-.logout {
-  color: white;
-  background-color: red;
-  font-size: 15px;
-  padding: 6px 10px;
-  border-radius: 10px;
 }
