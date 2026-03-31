@@ -16,8 +16,7 @@ function tambah() {
   } else if (!penulis) {
     alert("tolong masukan penulis terlebih dahulu");
     return;
-  } 
-  else if (!harga) {
+  } else if (!harga) {
     alert("tolong masukan harga terlebih dahulu");
     return;
   } else if (!stok) {
@@ -50,7 +49,7 @@ function ClearAll() {
   if (hapus) {
     daftar = [];
     transaksi = [];
-    render();   
+    render();
   }
 }
 
@@ -58,7 +57,6 @@ function ClearAll() {
 function clearForm() {
   document.getElementById("judul").value = "";
   document.getElementById("penulis").value = "";
-  // document.getElementById("genre").value = "";
   document.getElementById("harga").value = "";
   document.getElementById("stok").value = "";
 }
@@ -68,9 +66,8 @@ function render() {
   const listBuku = document.getElementById("listBuku");
   const listBeli = document.getElementById("listBeli");
 
-  listBuku.innerHTML = daftar
-    .map(
-      (b, i) => `
+  let hasilListBuku = daftar.map(
+    (b, i) => `
         <tr>
           <th>${i + 1}</th>
           <th>${b.judul}</th>
@@ -80,12 +77,13 @@ function render() {
           <th><button onclick="editBook(${i})" class="btn">Edit</button></th>
           <th><button onclick="deleteBook(${i})" class="btn">Hapus</button></th>
         </tr>`,
-    )
-    .join("");
+  );
+  
+  listBuku.innerHTML = hasilListBuku.join("");
 
-  listBeli.innerHTML = daftar
-    .map(
-      (b, i) => `
+
+  let hasilListBeli = daftar.map(
+    (b, i) => `
         <div class="card-js">
           <h3>${b.judul}</h3>
           <p>Penulis: ${b.penulis}</p>
@@ -93,8 +91,8 @@ function render() {
           <p>Stok: ${b.stok}</p>
           <button onclick="beliBook(${i})" class="btn">Beli</button>
         </div>`,
-    )
-    .join("");
+  );
+  listBeli.innerHTML = hasilListBeli.join("");
   tampilkanStruk();
 }
 
@@ -110,7 +108,6 @@ function editBook(index) {
   editIndex = index;
   document.getElementById("Tambah").innerText = "Update";
 }
-
 
 // untuk beli buku
 function beliBook(index) {
@@ -129,7 +126,6 @@ function beliBook(index) {
 
     transaksi.push(dataTransaksi);
     alert("Buku berhasil dibeli!");
-
   } else {
     alert("Stok habis!");
   }
@@ -143,7 +139,7 @@ function deleteBook(index) {
   render();
 }
 
-//untuk tampilin s truk 
+//untuk tampilin s truk
 function tampilkanStruk() {
   let container = document.getElementById("strukTransaksi");
   if (!container) return;
@@ -171,5 +167,5 @@ function logout() {
     alert("Logout dibatalkan.");
   }
 }
-// update 
+// update
 render();

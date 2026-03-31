@@ -24,6 +24,7 @@
         <ul>
             <!-- <li><a href="index.html">Beli Buku</a></li> -->
             <li><a href="book.html">Kelola Buku</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="Developer.html">Developer</a></li>
             <li class="logout" onclick="logout()">Log-out</li>
         </ul>
@@ -38,26 +39,26 @@
             <table>
                 <tr>
                     <td><label>Judul :</label></td>
-                    <td><input type="text" id="judul" placeholder="masukan judul buku "></td>
+                    <td><input type="text" id="judul" placeholder="masukan judul buku " required></td>
                 </tr>
 
                 <tr>
                     <td><label>Penulis : </label></td>
-                    <td><input type="text" id="penulis" placeholder="masukan nama penulis "></td>
+                    <td><input type="text" id="penulis" placeholder="masukan nama penulis " required></td>
                 </tr>
 
-                <!-- <tr>
+                <tr>
                     <td><label>Genre : </label></td>
                     <td><input type="text" id="genre" placeholder="masukkan genre"></td>
-                </tr> -->
+                </tr>.
                 <tr>
                     <td><label>Harga : </label></td>
-                    <td><input type="number" id="harga" placeholder="Masukan harga buku"></td>
+                    <td><input type="number" id="harga" placeholder="Masukan harga buku" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Stok : </label></td>
-                    <td><input type="number" id="stok" placeholder="Masukan stok buku"></td>
+                    <td><input type="number" id="stok" placeholder="Masukan stok buku" required></td>
                 </tr>
 
                 <tr>
@@ -90,7 +91,7 @@
                 </tr>
             </thead>
             <tbody id="listBuku">
-                
+
             </tbody>
         </table>
 
