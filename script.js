@@ -10,7 +10,10 @@ function tambah() {
   let penulis = document.getElementById("penulis").value;
   let genre = document.getElementById("genre").value;
   let harga = Number(document.getElementById("harga").value);
-  let stok = document.getElementById("stok").value;
+  let stok = Number(document.getElementById("stok").value);
+  let tanggal = document.getElementById("tanggalterbit").value;
+  let rating = document.getElementById("bintang").value;
+  let fotoBuku = document.getElementById("foto");
 
   if (!judul) {
     alert("tolong masukan judul terlebih dahulu");
@@ -20,28 +23,81 @@ function tambah() {
     return;
   } else if (!genre) {
     alert("tolong masukan genre terlebih dahulu");
+    return;
   } else if (!harga) {
     alert("tolong masukan harga terlebih dahulu");
     return;
   } else if (!stok) {
     alert("tolong masukan stok buku terlebih dahulu");
     return;
+  } else if (!rating) {
+    alert("tolong masukan rating buku terlebih dahulu");
+    return;
+  } else if (!tanggal) {
+    alert("tolong masukan tanggal penerbit terlebih dahulu");
+    return;
+  } else if (!fotoBuku.files[0]) {
+    alert("masukan foto buku terlebih dahulu");
+    return;
   }
 
-  let data = {
-    judul: judul,
-    penulis: penulis,
-    genre: genre,
-    harga: harga,
-    stok: stok,
-  };
+  let hasilRating = "";
+
+  rating = Number(rating);
+
+  if (rating > 5) {
+    rating = 5;
+  }
+  if (rating < 1) {
+    rating = 1;
+  }
+
+  for (let i = 0; i < rating; i++) {
+    hasilRating += "⭐";
+  }
+
+  let fileFotonya = fotoBuku.files[0];
+  let urlSementara = URL.createObjectURL(fileFotonya);
+
+  // let data = {
+  //   judul: judul,
+  //   penulis: penulis,
+  //   genre: genre,
+  //   harga: harga,
+  //   stok: stok,
+  //   tanggal: tanggal,
+  //   rating: hasilRating,
+  // };
 
   if (editIndex !== null) {
-    daftar[editIndex] = { judul, penulis, genre, harga, stok };
+    daftar[editIndex] = {
+      judul,
+      penulis,
+      genre,
+      harga,
+      stok,
+      tanggal,
+      rating: hasilRating,
+      foto: urlSementara,
+    };
     editIndex = null;
+    alert("update berhasil!");
     document.getElementById("Tambah").innerText = "Tambah";
+
   } else {
+    let data = {
+      judul,
+      penulis,
+      genre,
+      harga,
+      stok,
+      tanggal,
+      rating: hasilRating,
+      foto: urlSementara,
+    };
     daftar.push(data);
+
+    alert("data telah berhasil di masukan!");
   }
 
   clearForm();
@@ -52,8 +108,12 @@ function tambah() {
 function ClearAll() {
   let hapus = confirm("apakah anda akan menghapus semuanya?");
   if (hapus) {
+    alert("Menghapus data berhasil !");
     daftar = [];
     transaksi = [];
+    render();
+  } else {
+    alert("Menghapus data dibatalkan !");
     render();
   }
 }
@@ -65,9 +125,12 @@ function clearForm() {
   document.getElementById("genre").value = "";
   document.getElementById("harga").value = "";
   document.getElementById("stok").value = "";
+  document.getElementById("tanggalterbit").value = "";
+  document.getElementById("bintang").value = "";
+  document.getElementById("foto").value = "";
 }
 
-//untuk munculin buku / update lagi buku semua
+//untuk munculin buku / update lagi buku semua;
 function render() {
   const listBuku = document.getElementById("listBuku");
   const listBeli = document.getElementById("listBeli");
@@ -76,12 +139,15 @@ function render() {
     (b, i) => `
         <tr>
           <th>${i + 1}</th>
+          <th><img src="${b.foto}" width="50"></th>
           <th>${b.judul}</th>
           <th>${b.penulis}</th>
           <th>${b.genre}</th>
-          <th>${b.harga.toLocaleString()}</th>
+          <th>${b.rating}</th>
+          <th>${b.tanggal}</th>
+          <th>${b.harga.toLocaleString()}</th>  
           <th>${b.stok}</th>
-          <th><button onclick="editBook(${i})" class="btnListBuku">Edit</button></th>
+          <th><button onclick="editBook(${i})" class="btnListBuku"><a href="#update">Edit</a></button></th>
           <th><button onclick="deleteBook(${i})" class="btnListBuku">Hapus</button></th>
         </tr>`,
   );
@@ -90,16 +156,31 @@ function render() {
 
   let hasilListBeli = daftar.map(
     (b, i) => `
-        <div class="card-js">
-          <h3>${b.judul}</h3>
-          <p>Penulis: ${b.penulis}</p>
-          <p>Genre: ${b.genre}</p>
-          <p>Harga: ${b.harga.toLocaleString()}</p>
-          <p>Stok: ${b.stok}</p>
-          <button onclick="beliBook(${i})" class="btn">Beli</button>
-        </div>`,
+    <div class="card-js" style="width: 18rem;">
+        <div class="card-body">
+          <img src="${b.foto}" class="card-img-top" alt="...">
+          <h4 class="card-title">${b.judul}</h4>
+          <h5 class="card-text">Penulis : ${b.penulis}</h5>
+          <p class="card-text">Genre : ${b.genre}</p>
+          <p class="card-text">Rilis : ${b.tanggal}</p>
+          <p class="card-text">${b.rating}</p>
+          <p class="card-text">${b.harga.toLocaleString()}</p>
+          <p class="card-text">${b.stok}</p>
+          <button onclick="beliBook(${i})" class="btn"> ${b.stok === 0 ? "Sold Out" : "Beli"}</button>
+
+       </div>
+    </div>`,
   );
   listBeli.innerHTML = hasilListBeli.join("");
+
+  // ini buat yang tersedia dan terjual
+  let totalStok = daftar.reduce((total, b) => total + b.stok, 0);
+  let totalJual = transaksi.length;
+
+  document.getElementById("tersedia").innerHTML = `<h3>${totalStok}</h3>`;
+  document.getElementById("terjual").innerHTML = `<h3>${totalJual}</h3>`;
+
+  //tampilan struk
   tampilkanStruk();
 }
 
@@ -110,8 +191,11 @@ function editBook(index) {
   document.getElementById("judul").value = b.judul;
   document.getElementById("penulis").value = b.penulis;
   document.getElementById("genre").value = b.genre;
+  document.getElementById("bintang").value = b.rating;
+  // document.getElementById("foto").value = b.foto;
   document.getElementById("harga").value = b.harga;
   document.getElementById("stok").value = b.stok;
+  document.getElementById("tanggalterbit").value = b.tanggal;
 
   editIndex = index;
   document.getElementById("Tambah").innerText = "Update";
@@ -128,6 +212,7 @@ function beliBook(index) {
       id: "TRX-" + Math.floor(Math.random() * 10000),
       judul: buku.judul,
       genre: buku.genre,
+      tanggalTerbit: buku.tanggal,
       harga: buku.harga,
       tanggal: new Date().toLocaleString(),
     };
@@ -136,13 +221,15 @@ function beliBook(index) {
     alert("Buku berhasil dibeli!");
   } else {
     alert("Stok habis!");
+    document.getElementById("Beli").innerText = "Sold out!";
   }
+
   render();
-  tampilkanStruk();
 }
 
 //untuk delete buku 1 per 1
 function deleteBook(index) {
+  alert("anda berhasil mengehapus data ke-" + `${index + 1}`);
   daftar.splice(index, 1);
   render();
 }
@@ -157,11 +244,12 @@ function tampilkanStruk() {
   transaksi.forEach((t) => {
     container.innerHTML += `
       <div class="struk">
-        <b>ID: ${t.id}</b><br>
-        Judul: ${t.judul}<br>
-        Genre: ${t.genre}<br>
-        Harga:  Rp ${t.harga.toLocaleString()}<br>
-        Tanggal: ${t.tanggal}
+        <b>ID   : ${t.id}</b><br>
+        Judul   : ${t.judul}<br>
+        Genre   : ${t.genre}<br>
+        tanggal terbit: ${t.tanggalTerbit}<br>
+        Harga   :  Rp ${t.harga.toLocaleString()}<br>
+        Tanggal :  ${t.tanggal}
       </div>
     `;
   });
@@ -176,5 +264,8 @@ function logout() {
     alert("Logout dibatalkan.");
   }
 }
+
 // update
 render();
+
+
