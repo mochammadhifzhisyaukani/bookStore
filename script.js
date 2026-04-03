@@ -145,7 +145,7 @@ function render() {
           <th>${b.genre}</th>
           <th>${b.rating}</th>
           <th>${b.tanggal}</th>
-          <th>${b.harga.toLocaleString()}</th>  
+          <th>Rp.${b.harga.toLocaleString()}</th>  
           <th>${b.stok}</th>
           <th><button onclick="editBook(${i})" class="btnListBuku"><a href="#update">Edit</a></button></th>
           <th><button onclick="deleteBook(${i})" class="btnListBuku">Hapus</button></th>
@@ -160,11 +160,11 @@ function render() {
         <div class="card-body">
           <img src="${b.foto}" class="card-img-top" alt="...">
           <h4 class="card-title">${b.judul}</h4>
-          <h5 class="card-text">Penulis : ${b.penulis}</h5>
+          <h5 class="card-text">${b.penulis}</h5>
           <p class="card-text">Genre : ${b.genre}</p>
           <p class="card-text">Rilis : ${b.tanggal}</p>
           <p class="card-text">${b.rating}</p>
-          <p class="card-text">${b.harga.toLocaleString()}</p>
+          <p class="card-text">Rp.${b.harga.toLocaleString()}</p>
           <p class="card-text">${b.stok}</p>
           <button onclick="beliBook(${i})" class="btn"> ${b.stok === 0 ? "Sold Out" : "Beli"}</button>
 
