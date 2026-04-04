@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  scroll-behavior: smooth;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(to right, #a7acb5, #264931); */
+  background-color: #f4f1ea;
+}
+.logout {
+  color: white;
+  background-color: #c0392b;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.logout:hover {
+  border-radius: 20px;
+  background-color: #852222;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* div SELAMAT DATANG*/
+.datang {
+  background-color: #f4f1ea; /* Warna putih bersih */
+  width: 80%;
+  padding: 50px;
+  margin: 40px auto;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 200px;
+  margin-top: 100px;
+  transition: 0.5s ease-in-out;
+}
+
+.datang:hover {
+  background-color: #ffffff;
+  transform: scale(1.03);
+  box-shadow: 1px 1px 15px 3px #2c1b18;
+}
+
+.datang h1 {
+  font-size: 60px;
+  font-weight: 800;
+  color: #5d4037; /* Cokelat tua */
+  /* margin-bottom: 10px; */
+}
+
+.datang h3 {
+  color: #d35400; /* Oranye bata */
+  font-weight: 600;
+  /* margin-bottom: 20px; */
+}
+
+.datang p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.datang a {
+  display: inline-block;
+  padding: 12px 35px;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 2px solid #692d05;
+  color: #3b4953;
+}
+
+.datang a:hover {
+  color: white;
+  background-color: #5d4037;
+  border: 2px solid;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* BOOK  input*/
+#book {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+/* .form-grid label {
+  position: absolute;
+  left: 50px;
+  top: 65;
+  background: #fff;
+  padding: 0px 5px;
+  transition: transform 0.3 ease-in-out color ease;
+} */
+
+.form-box {
+  width: 550px;
+  margin: 50px auto;
+  padding: 30px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow:
+    10px 10px 20px #bebebe,
+    -10px -10px 20px #ffffff;
+  border-radius: 15px;
+  transition: 0.4s;
+  border-top: 5px solid var(--accent-orange);
+}
+
+.form-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ini jadi dua kolom */
+  gap: 20px;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-action {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-action button {
+  width: 200px;
+}
+
+.form-box input {
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.form-box button {
+  color: white;
+  background-color: #5d4037;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px;
+}
+
+.form-box button:hover {
+  background-color: #5d4037;
+  transform: scale(1.04);
+  color: rgb(168, 162, 162);
+}
+
+/* Buku (index) */
+.index-buku {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+section {
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+/* JS */
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.kode {
+  background-color: #4a90e2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.card-js {
+  background-color: white;
+  border: none;
+  border-left: 5px solid #d35400;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.card-js:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(211, 84, 0, 0.15);
+}
+
+.btn {
+  background-color: #d35400;
+  color: white;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #a04000;
+  color: rgb(168, 162, 162);
+  transform: scale(1.05);
+}
+
+.btnListBuku {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a04000;
+  color: white;
+  margin: 3px;
+}
+
+.btnListBuku a {
+  text-decoration: none;
+  color: white;
+}
+
+.btnListBuku:hover {
+  background-color: #692d05;
+  color: rgb(168, 162, 162);
+  transform: scale(1.05);
+}
+
+#strukTransaksi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* STRUK */
+
+.struk {
+  border: 1px solid #e0d8c3;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.struk b {
+  color: #094911;
+}
+
+/* tersedia dan terjual */
+#tersedia_terjual {
+  background-color: #5d4037;
+  border-left: 5px solid #756a2f;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.selamatdatang {
+  animation: typing 3s infinite;
+}
+
+/* music */
+#musicBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+
+  background-color: #e6c068;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+
+  font-size: 25px;
+  padding-left: 3px;
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+#musicBtn:hover {
+  transform: scale(1.1);
+  background-color: #3b4953;
+  color: white;
+}

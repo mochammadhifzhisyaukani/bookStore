@@ -1,0 +1,94 @@
+/* DEVELOPER */
+
+#dev {
+  margin-top: 50px;
+}
+
+.developer section {
+  background: white;
+  border-bottom: 4px solid #5d4037;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.ari img {
+  border-radius: 50%;
+  width: 150px;
+  height: 160px;
+  object-fit: cover;
+  transition: 2s;
+  margin: 15px;
+  margin-bottom: 30px;
+}
+.hifzhi img {
+  margin: 15px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 2s;
+}
+
+.gerry img {
+  height: 160px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 2s;
+  margin: 15px;
+  margin-bottom: 25px;
+}
+
+section img:hover {
+  padding: 1px;
+  transform: scale(1.1);
+}
+
+.developer section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(93, 64, 55, 0.2);
+}
+
+.developer p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.developer a {
+  background-color: #8d6e63;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.developer a:hover {
+  background-color: #5d4037;
+  color: rgb(168, 162, 162);
+  transform: scale(1.1);
+}
+
+.card {
+  transition: 0.3;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.developer {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+section {
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 5px;
+}

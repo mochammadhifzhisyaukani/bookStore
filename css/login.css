@@ -1,0 +1,97 @@
+.log {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../assets/background_login.jpg");
+
+  background-size: cover;
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border: 2px solid #e0d8c3;
+  padding: 20px;
+  border-radius: 10px;
+  height: 400px;
+  width: 900px;
+  gap: 50px;
+  margin: 150px auto;
+  transition: 0.3s;
+}
+
+.login:hover {
+  box-shadow: 5px 5px 50px 35px rgba(180, 117, 30, 0.2);
+}
+
+.Sign-in {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.Sign-in h1 {
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.Sign-in p {
+  color: #ffffff;
+  margin-bottom: px;
+  font-size: large;
+}
+
+.Sign-in a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 50px;
+  background-color: #e6c068;
+  padding: 6px 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.Sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.Sign-up h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.Sign-up input {
+  margin: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #e0d8c3;
+  width: 250px;
+}
+
+.Sign-up a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #e6c068;
+  padding: 6px 10px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.Sign-in a:hover,
+.Sign-up a:hover {
+  background-color: #3b4953;
+  transform: scale(1.03);
+}
+
+
